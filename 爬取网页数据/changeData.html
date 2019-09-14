@@ -1,0 +1,25 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <!-- toast插件 -->
+    <title>json- to excel </title>
+    <script src="xlsx.full.min.js"></script>
+    <script src="FileSaver.min.js"></script>
+    <script src="download.js"></script>
+</head>
+
+<body>
+    <button onclick='tableToExcel()'>导出</button>
+    <script>
+        function tableToExcel() {//列标题
+            var jsonData = new Array();
+            var li = document.getElementsByClassName('column w200 bold');
+            for (var i in li) {
+                var obj = li[i];
+                jsonData.push({ '时间': obj.innerText });
+            }
+            console.log(jsonData);
+            downloadExl(jsonData);
+        }
+    </script>
+</body>
