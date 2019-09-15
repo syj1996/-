@@ -13,13 +13,16 @@
     <script>
         function tableToExcel() {//列标题
             var jsonData = new Array();
+            //通过DOM操作得到数据
             var li = document.getElementsByClassName('column w200 bold');
             for (var i in li) {
                 var obj = li[i];
                 jsonData.push({ '时间': obj.innerText });
             }
             console.log(jsonData);
+            //通过下载到excel表格方法下载到excel
             downloadExl(jsonData);
         }
     </script>
+    <!-- 添加网页的HTML -->
 </body>
